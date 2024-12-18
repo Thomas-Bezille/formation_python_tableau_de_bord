@@ -4,9 +4,9 @@ from pprint import pprint
 import requests
 
 
-def get_rates(currencies, days_len=30):
+def get_rates(currencies, days_range=30):
     end_date = date.today()
-    start_date = end_date - timedelta(days=days_len)
+    start_date = end_date - timedelta(days=days_range)
 
     symbols = ','.join(currencies)
     endpoint = f"https://www.docstring.fr/api/rates/history/?start_at={start_date}&end_at={end_date}&symbols={symbols}"
